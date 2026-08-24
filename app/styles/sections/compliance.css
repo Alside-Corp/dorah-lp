@@ -1,0 +1,55 @@
+.commitment-list {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+}
+
+.commitment-panel {
+  background: color-mix(in srgb, var(--gelo) 28%, transparent);
+  border: 1px solid color-mix(in srgb, var(--grafite) 8%, transparent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.commitment-intro {
+  color: var(--ardosia);
+  font-size: 1.05rem;
+  line-height: 2rem;
+}
+
+.commitment-item {
+  background: color-mix(in srgb, var(--papel) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--grafite) 7%, transparent);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: auto 1fr;
+  padding: var(--space-5);
+}
+
+.commitment-item + .commitment-item {
+  margin-top: var(--space-3);
+}
+
+.commitment-icon {
+  align-items: center;
+  background: color-mix(in srgb, var(--gelo-profundo) 13%, transparent);
+  border-radius: var(--radius-pill);
+  color: var(--gelo-profundo);
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.commitment-item strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.commitment-item p {
+  color: var(--ardosia);
+  font-size: .92rem;
+  line-height: 1.55rem;
+  margin-top: var(--space-1);
+}

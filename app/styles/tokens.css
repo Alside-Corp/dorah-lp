@@ -1,0 +1,43 @@
+:root {
+  --color-grafite: #1b2124;
+  --color-ardosia: #47545a;
+  --color-gelo: #dce4e6;
+  --color-gelo-profundo: #3f7b89;
+  --color-areia: #e8e4dc;
+  --color-papel: #f5f7f7;
+
+  --grafite: var(--color-grafite);
+  --ardosia: var(--color-ardosia);
+  --gelo: var(--color-gelo);
+  --gelo-profundo: var(--color-gelo-profundo);
+  --areia: var(--color-areia);
+  --papel: var(--color-papel);
+
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, serif;
+
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-28: 7rem;
+
+  --radius-sm: .375rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2rem;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 1px 2px rgba(15, 23, 42, .08);
+  --shadow-card: 0 24px 60px rgba(15, 23, 42, .08);
+  --shadow-lift: 0 14px 34px rgba(27, 33, 36, .18);
+}

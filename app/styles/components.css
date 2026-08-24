@@ -1,0 +1,134 @@
+.button {
+  align-items: center;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  font-size: .875rem;
+  font-weight: 500;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  transition:
+    background-color .24s ease,
+    border-color .24s ease,
+    box-shadow .24s ease,
+    color .24s ease,
+    transform .24s ease;
+}
+
+.button-primary {
+  background: var(--grafite);
+  color: var(--papel);
+}
+
+.button-primary:hover {
+  background: color-mix(in srgb, var(--grafite) 88%, var(--gelo-profundo));
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  border: 1px solid color-mix(in srgb, var(--grafite) 20%, transparent);
+}
+
+.button-secondary:hover {
+  background: color-mix(in srgb, var(--papel) 72%, transparent);
+  border-color: color-mix(in srgb, var(--gelo-profundo) 55%, transparent);
+  color: var(--gelo-profundo);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.header-button {
+  padding: .625rem var(--space-4);
+}
+
+.grain {
+  overflow: hidden;
+  position: relative;
+}
+
+.grain::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  content: '';
+  inset: 0;
+  opacity: .18;
+  pointer-events: none;
+  position: absolute;
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-card--light {
+  background: rgba(255, 255, 255, .55);
+}
+
+.glass-card--dark {
+  background: rgba(27, 33, 36, .6);
+  border-color: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+
+.surface-aurora {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(63, 123, 137, .26), transparent 30%),
+    radial-gradient(circle at 20% 86%, rgba(220, 228, 230, .82), transparent 36%);
+}
+
+.interactive-card {
+  overflow: hidden;
+  position: relative;
+  transition:
+    border-color .32s ease,
+    box-shadow .32s ease,
+    transform .32s cubic-bezier(.22, 1, .36, 1);
+}
+
+.interactive-card::after {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .4), transparent 46%);
+  content: '';
+  inset: 0;
+  opacity: .55;
+  pointer-events: none;
+  position: absolute;
+}
+
+.interactive-card:hover {
+  border-color: rgba(63, 123, 137, .42);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, .10);
+  transform: translateY(-.5rem) scale(1.015);
+}
+
+.brand-mark,
+.brand-word {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.brand-mark-do {
+  color: var(--grafite);
+}
+
+.brand-mark-rah {
+  color: var(--gelo-profundo);
+}
+
+.section-dark .brand-mark-do {
+  color: var(--papel);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card {
+    transition: none;
+    transform: none;
+  }
+}

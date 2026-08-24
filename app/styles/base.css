@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--papel);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--grafite);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--gelo);
+  color: var(--grafite);
+}

@@ -1,0 +1,138 @@
+.hero-glass-visual {
+  display: none;
+}
+
+.hero-care-card {
+  background: color-mix(in srgb, var(--grafite) 88%, var(--gelo-profundo));
+  border-color: rgba(255, 255, 255, .16);
+  border-radius: 2rem;
+  box-shadow:
+    0 34px 80px rgba(12, 22, 24, .26),
+    inset 0 1px 0 rgba(255, 255, 255, .14);
+  overflow: hidden;
+  padding: var(--space-8) var(--space-8) var(--space-7);
+  position: relative;
+}
+
+.hero-care-card::before {
+  background:
+    radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--gelo-profundo) 42%, transparent), transparent 34%),
+    radial-gradient(circle at 14% 90%, rgba(255, 255, 255, .1), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, .1), transparent 44%);
+  content: '';
+  inset: 0;
+  opacity: .95;
+  position: absolute;
+}
+
+.hero-care-card::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .18), transparent);
+  content: '';
+  height: 1px;
+  left: 12%;
+  position: absolute;
+  right: 12%;
+  top: 0;
+}
+
+.hero-glass-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-glass-header p {
+  color: var(--papel);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.hero-glass-header span:not(.private-pill) {
+  color: color-mix(in srgb, var(--gelo) 66%, transparent);
+  display: block;
+  font-size: .84rem;
+  margin-top: .28rem;
+}
+
+.private-pill {
+  align-items: center;
+  background: color-mix(in srgb, var(--gelo-profundo) 28%, var(--grafite));
+  border: 1px solid color-mix(in srgb, var(--gelo-profundo) 52%, transparent);
+  border-radius: var(--radius-pill);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .12),
+    0 10px 26px rgba(0, 0, 0, .14);
+  color: color-mix(in srgb, var(--papel) 86%, transparent);
+  display: inline-flex;
+  font-size: .82rem;
+  gap: .4rem;
+  padding: .48rem .88rem;
+}
+
+.hero-care-message {
+  background: rgba(245, 247, 247, .92);
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 1.35rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .8),
+    0 24px 48px rgba(0, 0, 0, .18);
+  padding: var(--space-5) var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-message-time {
+  color: color-mix(in srgb, var(--grafite) 62%, transparent);
+  display: block;
+  font-size: .82rem;
+  margin-bottom: var(--space-3);
+}
+
+.hero-care-message p {
+  color: var(--grafite);
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: -.015em;
+  line-height: 1.62rem;
+  max-width: 18rem;
+}
+
+.hero-care-note {
+  align-items: center;
+  color: color-mix(in srgb, var(--papel) 78%, transparent);
+  display: flex;
+  font-size: .86rem;
+  gap: .7rem;
+  line-height: 1.4rem;
+  margin-top: var(--space-5);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-care-note span {
+  background: var(--gelo-profundo);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--gelo-profundo) 52%, transparent);
+  display: inline-flex;
+  height: .4rem;
+  width: .4rem;
+}
+
+.hero-privacy-strip {
+  align-items: center;
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--radius-pill);
+  color: color-mix(in srgb, var(--gelo) 76%, transparent);
+  display: inline-flex;
+  font-size: .8rem;
+  gap: .45rem;
+  margin-top: var(--space-4);
+  padding: .55rem .85rem;
+  position: relative;
+  z-index: 1;
+}

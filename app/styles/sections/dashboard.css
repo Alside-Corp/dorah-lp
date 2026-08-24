@@ -1,0 +1,70 @@
+.dashboard-card {
+  background: color-mix(in srgb, var(--papel) 90%, transparent);
+  color: var(--grafite);
+  padding: var(--space-8);
+}
+
+.dashboard-head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-period {
+  background: var(--gelo);
+  border-radius: var(--radius-pill);
+  font-size: .75rem;
+  padding: var(--space-1) var(--space-3);
+}
+
+.dashboard-metrics {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.metric-value {
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.metric-label {
+  color: var(--ardosia);
+  font-size: .875rem;
+  margin-top: var(--space-1);
+}
+
+.metric-bar {
+  animation: chart-grow .7s cubic-bezier(.22, 1, .36, 1) forwards;
+  animation-delay: var(--bar-delay);
+  height: var(--bar-height);
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.chart {
+  align-items: flex-end;
+  display: flex;
+  gap: var(--space-2);
+  height: 8rem;
+  margin-top: var(--space-8);
+}
+
+.chart-bar {
+  background: color-mix(in srgb, var(--gelo-profundo) 80%, transparent);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  flex: 1;
+}
+
+@keyframes chart-grow {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-bar {
+    animation: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,36 @@
+.step-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-14);
+}
+
+.step-card {
+  border: 1px solid color-mix(in srgb, var(--grafite) 10%, transparent);
+  border-radius: var(--radius-lg);
+  height: 100%;
+  padding: var(--space-8);
+}
+
+.step-number {
+  color: var(--gelo-profundo);
+  font-size: .875rem;
+}
+
+.step-rule {
+  background: color-mix(in srgb, var(--gelo-profundo) 45%, transparent);
+  height: 1px;
+  margin-top: var(--space-12);
+  width: 3rem;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: var(--space-8);
+}
+
+.step-copy {
+  color: var(--ardosia);
+  line-height: 1.75rem;
+  margin-top: var(--space-4);
+}
