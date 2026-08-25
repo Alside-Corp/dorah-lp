@@ -2,6 +2,10 @@
 
 Landing page institucional da Dorah, plataforma de saúde mental corporativa.
 
+A Dorah cria um espaço seguro para que pessoas conversem com psicólogos no próprio ritmo. A plataforma ajuda a identificar sinais antes que eles se transformem em crises, oferecendo escuta humana e acompanhamento contínuo.
+
+Para psicólogos, a Dorah organiza contexto e histórico para apoiar o cuidado clínico. Para o RH, apresenta apenas tendências e indicadores agregados, sem expor conversas, relatos ou dados individuais. Essa separação protege a confiança das pessoas e apoia a empresa na compreensão dos riscos psicossociais e da NR-1.
+
 ## Versões
 
 - Node.js: `20.9.0` ou superior
@@ -37,10 +41,3 @@ public/             Arquivos estáticos
 ```
 
 A página principal (`app/page.tsx`) compõe as seções a partir de `features/landing`. Os estilos ficam organizados em `app/styles`, e o alias `@/*` aponta para a raiz do projeto.
-
-## Build de produção
-
-```bash
-npm run build
-npm run start
-```
