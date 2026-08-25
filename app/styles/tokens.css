@@ -4,7 +4,7 @@
   --color-gelo: #dce4e6;
   --color-gelo-profundo: #3f7b89;
   --color-areia: #e8e4dc;
-  --color-papel: #f5f7f7;
+  --color-papel: #fbfbfd;
 
   --grafite: var(--color-grafite);
   --ardosia: var(--color-ardosia);
@@ -13,12 +13,13 @@
   --areia: var(--color-areia);
   --papel: var(--color-papel);
 
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
   --font-serif: Georgia, serif;
 
-  --space-1: .25rem;
-  --space-2: .5rem;
-  --space-3: .75rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
   --space-4: 1rem;
   --space-5: 1.25rem;
   --space-6: 1.5rem;
@@ -30,14 +31,14 @@
   --space-16: 4rem;
   --space-28: 7rem;
 
-  --radius-sm: .375rem;
+  --radius-sm: 0.375rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-xl: 1.75rem;
   --radius-2xl: 2rem;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 1px 2px rgba(15, 23, 42, .08);
-  --shadow-card: 0 24px 60px rgba(15, 23, 42, .08);
-  --shadow-lift: 0 14px 34px rgba(27, 33, 36, .18);
+  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 24px 70px rgba(15, 23, 42, 0.08);
+  --shadow-lift: 0 14px 34px rgba(27, 33, 36, 0.14);
 }

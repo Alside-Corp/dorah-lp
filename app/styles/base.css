@@ -12,6 +12,8 @@ body {
   background: var(--papel);
   color: var(--grafite);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
