@@ -2,7 +2,7 @@
   align-items: center;
   border-radius: var(--radius-pill);
   display: inline-flex;
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   gap: var(--space-2);
   padding: var(--space-4) var(--space-6);
@@ -79,12 +79,68 @@
 .site-nav a {
   border-radius: var(--radius-pill);
   color: var(--ardosia);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   padding: 0.5rem 0.85rem;
   position: relative;
   transition:
     background 0.24s ease,
     color 0.24s ease;
+}
+
+.mobile-menu {
+  position: relative;
+}
+
+.mobile-menu-trigger {
+  align-items: center;
+  background: var(--surface-glass-light-strong);
+  border: 1px solid var(--border-accent-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  display: inline-flex;
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+}
+
+.mobile-navigation {
+  background: var(--surface-glass-light-strong);
+  border: 1px solid var(--glass-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+  display: grid;
+  gap: var(--space-2);
+  min-width: min(18rem, calc(100vw - 2rem));
+  padding: var(--space-3);
+  position: absolute;
+  right: 0;
+  top: calc(100% + var(--space-3));
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+}
+
+.mobile-navigation > a:not(.button) {
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  padding: var(--space-3) var(--space-4);
+}
+
+.mobile-navigation > a:not(.button):hover {
+  background: color-mix(in srgb, var(--gelo-profundo) 12%, transparent);
+  color: var(--text-accent);
+}
+
+.mobile-navigation .button {
+  justify-content: center;
+  margin-top: var(--space-1);
+}
+
+.button:focus-visible,
+.mobile-menu-trigger:focus-visible,
+.mobile-navigation a:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 3px;
 }
 
 .site-nav a::after {
@@ -188,7 +244,7 @@
 
 .brand-mark,
 .brand-word {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   font-weight: 700;
   letter-spacing: 0;
 }
@@ -276,7 +332,7 @@
 }
 .impact-value {
   color: var(--gelo-profundo);
-  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-size: var(--text-metric);
   font-weight: 650;
   letter-spacing: -0.06em;
   line-height: 1;
@@ -291,12 +347,12 @@
 }
 .impact-label {
   color: var(--grafite);
-  font-size: 1.1rem;
+  font-size: var(--text-lg);
   margin: 0;
 }
 .impact-detail {
   color: var(--ardosia);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   line-height: 1.55;
   margin: 0.75rem 0 0;
 }

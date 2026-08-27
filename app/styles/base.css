@@ -3,14 +3,14 @@
 }
 
 html {
-  background: var(--papel);
+  background: var(--surface-page);
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: var(--papel);
-  color: var(--grafite);
+  background: var(--surface-page);
+  color: var(--text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

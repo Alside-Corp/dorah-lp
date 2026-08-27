@@ -38,6 +38,40 @@
     -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
   --font-serif: Georgia, serif;
 
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-display-sm: clamp(2.25rem, 6vw, 3.75rem);
+  --text-display-md: clamp(2.75rem, 6.2vw, 5rem);
+  --text-display-lg: clamp(2.9rem, 7.2vw, 5.5rem);
+  --text-metric: clamp(2.8rem, 5vw, 4rem);
+
+  /* Semantic color roles */
+  --text-primary: var(--grafite);
+  --text-secondary: var(--ardosia);
+  --text-inverse: var(--papel);
+  --text-accent: var(--gelo-profundo);
+  --surface-page: var(--papel);
+  --surface-warm: var(--areia);
+  --surface-cool: var(--gelo);
+  --surface-inverse: var(--grafite);
+  --surface-accent: var(--gelo-profundo);
+  --border-subtle: color-mix(in srgb, var(--grafite) 12%, transparent);
+  --border-accent-subtle: color-mix(in srgb, var(--gelo-profundo) 18%, transparent);
+  --border-inverse-subtle: color-mix(in srgb, var(--gelo) 18%, transparent);
+
+  /* Semantic transparency and elevation */
+  --surface-glass-light: color-mix(in srgb, var(--papel) 68%, transparent);
+  --surface-glass-light-strong: color-mix(in srgb, var(--papel) 78%, transparent);
+  --surface-glass-dark: color-mix(in srgb, var(--grafite) 72%, transparent);
+  --shadow-color-soft: color-mix(in srgb, var(--grafite) 10%, transparent);
+  --shadow-color-medium: color-mix(in srgb, var(--grafite) 18%, transparent);
+  --shadow-color-strong: color-mix(in srgb, var(--grafite) 26%, transparent);
+
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -62,4 +96,7 @@
   --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.06);
   --shadow-card: 0 24px 70px var(--shadow-ink-soft-color);
   --shadow-lift: 0 14px 34px rgba(27, 33, 36, 0.14);
+  --shadow-panel: 0 22px 50px var(--shadow-color-soft);
+  --shadow-panel-dark: 0 24px 56px var(--shadow-color-medium);
+  --shadow-floating: 0 34px 80px var(--shadow-color-strong);
 }

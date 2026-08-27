@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import { SectionReveal } from '@/components/motion/section-reveal';
+import { StaggeredReveal } from '@/components/motion/staggered-reveal';
 import { complianceContent } from '../content';
 
 export function Compliance() {
@@ -10,7 +11,7 @@ export function Compliance() {
           <p className="eyebrow section-kicker-space">{complianceContent.eyebrow}</p>
           <h2 className="display section-title">{complianceContent.title}</h2>
         </SectionReveal>
-        <SectionReveal className="commitment-panel">
+        <StaggeredReveal className="commitment-panel" itemSelector=".commitment-item">
           <p className="commitment-intro">{complianceContent.intro}</p>
           <ul className="commitment-list">
             {complianceContent.commitments.map((commitment) => (
@@ -25,7 +26,7 @@ export function Compliance() {
               </li>
             ))}
           </ul>
-        </SectionReveal>
+        </StaggeredReveal>
       </div>
     </section>
   );

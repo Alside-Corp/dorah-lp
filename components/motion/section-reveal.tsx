@@ -44,54 +44,6 @@ export function SectionReveal({
         },
       );
 
-      if (target.classList.contains('weekly-summary-card')) {
-        const items = target.querySelectorAll(
-          '.weekly-summary-stats > div, .theme-bar-row, .pattern-note',
-        );
-        const fills = target.querySelectorAll<HTMLElement>('.theme-bar-fill');
-
-        gsap.set(fills, { scaleX: 0, transformOrigin: 'left center' });
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: target,
-              start: 'top 78%',
-              toggleActions: 'play none none reverse',
-            },
-          })
-          .from(items, {
-            autoAlpha: 0,
-            duration: 0.38,
-            ease: 'power2.out',
-            stagger: 0.09,
-            y: 14,
-          })
-          .to(
-            fills,
-            {
-              duration: 0.55,
-              ease: 'power2.out',
-              scaleX: 1,
-              stagger: 0.1,
-            },
-            '-=0.22',
-          );
-      }
-
-      if (target.classList.contains('commitment-panel')) {
-        gsap.from(target.querySelectorAll('.commitment-item'), {
-          autoAlpha: 0,
-          duration: 0.48,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: target,
-            start: 'top 78%',
-            toggleActions: 'play none none reverse',
-          },
-          stagger: 0.12,
-          y: 22,
-        });
-      }
     }, target);
 
     return () => context.revert();

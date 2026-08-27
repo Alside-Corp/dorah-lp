@@ -1,4 +1,5 @@
 import { SectionReveal } from '@/components/motion/section-reveal';
+import { StaggeredReveal } from '@/components/motion/staggered-reveal';
 import { psychologistContent } from '../content';
 
 const themes = [
@@ -22,7 +23,11 @@ export function Psychologist() {
           </h2>
           <p className="section-copy copy-muted">{psychologistContent.text}</p>
         </SectionReveal>
-        <SectionReveal className="weekly-summary-card">
+        <StaggeredReveal
+          className="weekly-summary-card"
+          itemSelector=".weekly-summary-stats > div, .theme-bar-row, .pattern-note"
+          fillSelector=".theme-bar-fill"
+        >
           <div className="weekly-summary-head">
             <div>
               <p className="weekly-summary-title">Resumo da semana</p>
@@ -79,7 +84,7 @@ export function Psychologist() {
               terças. Leitura sugerida ao psicólogo.
             </p>
           </div>
-        </SectionReveal>
+        </StaggeredReveal>
       </div>
     </section>
   );

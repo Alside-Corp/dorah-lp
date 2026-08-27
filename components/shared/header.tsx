@@ -1,5 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import { MobileMenu } from './mobile-menu';
+
 export function Header() {
   return (
     <header className="site-header absolute inset-x-0 top-0 z-10">
@@ -18,9 +20,10 @@ export function Header() {
           <a href="#privacidade">Privacidade</a>
           <a href="#rh">Para empresas</a>
         </nav>
-        <a className="button button-primary header-button" href="#contato">
+        <a className="button button-primary header-button hidden md:inline-flex" href="#contato">
           Falar com a Dorah <ArrowUpRight size={15} />
         </a>
+        <MobileMenu />
       </div>
     </header>
   );

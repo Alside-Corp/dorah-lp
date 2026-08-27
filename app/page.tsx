@@ -12,18 +12,20 @@ import { Psychologist } from '@/features/landing/psychologist';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Header />
-      <Hero />
-      <Problem />
-      <Impact />
-      <Conversation />
-      <HowItWorks />
-      <Psychologist />
-      <Compliance />
-      <Dashboard />
-      <Cta />
+      <main>
+        <Hero />
+        <Problem />
+        <Impact />
+        <Conversation />
+        <HowItWorks />
+        <Psychologist />
+        <Compliance />
+        <Dashboard />
+        <Cta />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
