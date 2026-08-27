@@ -5,7 +5,7 @@ import { complianceContent } from '../content';
 export function Compliance() {
   return (
     <section id="privacidade" className="section-papel section-pad">
-      <div className="container split-grid">
+      <div className="container compliance-layout">
         <SectionReveal>
           <p className="eyebrow section-kicker-space">{complianceContent.eyebrow}</p>
           <h2 className="display section-title">{complianceContent.title}</h2>

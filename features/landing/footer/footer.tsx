@@ -1,13 +1,11 @@
 import { footerContent } from '../content';
+import Image from 'next/image';
 
 export function Footer() {
   return (
     <footer className="section-dark py-8 text-gelo">
       <div className="container footer-shell text-sm">
-        <p className="brand-word" aria-label="Dorah">
-          <span className="brand-mark-do">Do</span>
-          <span className="brand-mark-rah">rah</span>
-        </p>
+        <Image src="/brand/lockup-nevoa-48-transparente.png" alt="Dorah" width={102} height={32} />
         <p>
           © {new Date().getFullYear()} Dorah. {footerContent.text}
         </p>

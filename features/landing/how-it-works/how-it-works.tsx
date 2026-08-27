@@ -4,7 +4,7 @@ import { howItWorksContent } from '../content';
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="section-areia section-pad">
+    <section id="como-funciona" className="section-papel section-pad">
       <div className="container">
         <SectionReveal>
           <p className="eyebrow section-kicker-space">{howItWorksContent.eyebrow}</p>

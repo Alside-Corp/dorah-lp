@@ -65,20 +65,22 @@ export function ProblemSignal() {
       <div className="problem-signal-orbit">
         <span className="problem-signal-pulse" />
         <span className="problem-signal-pulse" />
+        <span className="problem-signal-pulse" />
+        <span className="problem-signal-pulse" />
       </div>
       <div className="problem-signal-core">
-        <span>fase silenciosa</span>
+        <span>Fase silenciosa</span>
       </div>
       <div className="problem-signal-list">
         {problemContent.signals.map(({ label, value }, index) => {
           const Icon = icons[index];
 
           return (
-          <div className="problem-signal-node" key={label}>
-            <Icon size={17} />
-            <span>{label}</span>
-            <strong>{value}</strong>
-          </div>
+            <div className="problem-signal-node" key={label}>
+              <Icon size={17} />
+              <span>{label}</span>
+              <strong>{value}</strong>
+            </div>
           );
         })}
       </div>

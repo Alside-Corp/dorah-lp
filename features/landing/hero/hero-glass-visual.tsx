@@ -12,27 +12,14 @@ export function HeroGlassVisual() {
 
   useLayoutEffect(() => {
     const target = element.current;
-    if (!target) return;
-
+    if (!target || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const context = gsap.context(() => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
       gsap.fromTo(
         target,
         { autoAlpha: 0, x: 40, scale: 0.94 },
         { autoAlpha: 1, x: 0, scale: 1, duration: 1.1, delay: 0.35, ease: 'power3.out' },
       );
-
-      gsap.to(target, {
-        y: -12,
-        duration: 3.2,
-        delay: 1.4,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      });
     }, target);
-
     return () => context.revert();
   }, []);
 
@@ -49,17 +36,17 @@ export function HeroGlassVisual() {
             {card.status}
           </span>
         </div>
-
-        <div className="hero-care-message">
+        <div className="hero-conversation">
           <span className="hero-message-time">{card.time}</span>
-          <p>{card.message}</p>
+          {card.messages.map((message, index) => (
+            <p
+              className={`hero-bubble hero-bubble-${message.sender}`}
+              key={`${message.sender}-${index}`}
+            >
+              {message.text}
+            </p>
+          ))}
         </div>
-
-        <p className="hero-care-note">
-          <span />
-          {card.note}
-        </p>
-
         <div className="hero-privacy-strip">
           <ShieldCheck size={15} />
           {card.privacy}

@@ -11,8 +11,26 @@ export const heroContent = {
     subtitle: 'canal protegido',
     status: 'Privado',
     time: 'Hoje, 09:42',
-    message: '"Quero encontrar um jeito mais leve de seguir."',
-    note: 'Escuta humana para a pessoa. Contexto seguro para quem cuida.',
+    messages: [
+      { sender: 'person', text: 'cara eu tô acabado' },
+      {
+        sender: 'dorah',
+        text: 'Opa. Chegou pesado hoje. Aconteceu alguma coisa ou é mais aquele cansaço que vem se juntando?',
+      },
+      {
+        sender: 'person',
+        text: 'sei lá, nem aconteceu nada demais. só que eu durmo e acordo do mesmo jeito, sem vontade de nada',
+      },
+      {
+        sender: 'dorah',
+        text: 'Isso cansa de um jeito diferente, né. Não é o corpo, é a cabeça que não desliga. Faz tempo que tá assim?',
+      },
+      { sender: 'person', text: 'umas duas semanas eu acho. piora mais no começo da semana' },
+      {
+        sender: 'dorah',
+        text: 'Anotei aqui. Faz sentido nomear isso — às vezes só perceber que tá acontecendo já muda um pouco o peso.',
+      },
+    ],
     privacy: 'Dados individuais não chegam ao RH.',
   },
 };
@@ -20,7 +38,7 @@ export const heroContent = {
 export const problemContent = {
   eyebrow: 'O problema',
   title: 'Antes do afastamento, existe uma fase silenciosa.',
-  text: 'Sinais pequenos se acumulam. Mas quase ninguém os vê a tempo, e quem precisa de escuta encontra apenas formulários.',
+  text: 'Sinais pequenos se acumulam por semanas: menos conversa, sono irregular, sobrecarga constante. Quase ninguém os vê a tempo — e quem precisa de escuta encontra apenas formulários.',
   stats: [
     { value: '1 em 3', label: 'pessoas sofrem em silêncio' },
     { value: '+35%', label: 'de absenteísmo evitável' },
@@ -29,20 +47,8 @@ export const problemContent = {
   signals: [
     { label: 'Menos conversa', value: '12 dias' },
     { label: 'Sono irregular', value: '+28%' },
-    { label: 'Sobrecarga', value: 'alta' },
+    { label: 'Sobrecarga', value: 'constante' },
   ],
-};
-
-export const silentWindowContent = {
-  eyebrow: 'A janela silenciosa',
-  title: 'Cuidar começa antes da crise.',
-  text: 'A Dorah cria um espaço discreto e contínuo para a pessoa falar quando sentir que precisa, sem pressão, sem vigilância.',
-  chat: {
-    time: 'Hoje, 09:42',
-    user: 'Tem sido difícil sustentar o ritmo nas últimas semanas.',
-    reply: 'Obrigado por compartilhar. Quer contar um pouco mais sobre isso?',
-    caption: 'Uma conversa privada. Um caminho para o cuidado.',
-  },
 };
 
 export const howItWorksContent = {
@@ -73,14 +79,7 @@ export const howItWorksContent = {
 export const psychologistContent = {
   eyebrow: 'Para quem cuida',
   titleLines: ['Mais contexto.', 'Menos ruído.'],
-  text: 'A Dorah organiza a linha do tempo e evidencia padrões para o psicólogo conduzir o que nenhuma tecnologia pode decidir: o cuidado.',
-  timelineLabel: 'Linha do tempo · Pessoa acompanhada',
-  status: 'contexto clínico',
-  timeline: [
-    { date: 'Hoje', text: 'Relato de sobrecarga recorrente', tone: 'Atenção' },
-    { date: 'Há 7 dias', text: 'Mudança de rotina mencionada', tone: 'Contexto' },
-    { date: 'Há 21 dias', text: 'Primeiro pedido de apoio', tone: 'Início' },
-  ],
+  text: 'A Dorah organiza a semana e evidencia padrões para o psicólogo conduzir o que nenhuma tecnologia pode decidir: o cuidado.',
 };
 
 export const conversationContent = {
