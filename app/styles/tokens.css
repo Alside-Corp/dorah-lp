@@ -3,6 +3,9 @@
   --color-ardosia: #47545a;
   --color-gelo: #dce4e6;
   --color-gelo-profundo: #3f7b89;
+  --color-ciano-vivo: #76cddd;
+  --color-amarelo-apoio: #d7b36c;
+  --color-coral-apoio: #e58d72;
   --color-areia: #e8e4dc;
   --color-papel: #fbfbfd;
 
@@ -10,8 +13,26 @@
   --ardosia: var(--color-ardosia);
   --gelo: var(--color-gelo);
   --gelo-profundo: var(--color-gelo-profundo);
+  --ciano-vivo: var(--color-ciano-vivo);
+  --amarelo-apoio: var(--color-amarelo-apoio);
+  --coral-apoio: var(--color-coral-apoio);
+
+  --glass-dark-start: color-mix(in srgb, var(--grafite) 74%, transparent);
+  --glass-dark-end: color-mix(in srgb, var(--gelo-profundo) 36%, transparent);
+  --glass-dark-border: color-mix(in srgb, var(--papel) 34%, transparent);
   --areia: var(--color-areia);
   --papel: var(--color-papel);
+
+  /* Shared translucent treatments */
+  --overlay-light-soft: rgba(255, 255, 255, 0.1);
+  --overlay-light-subtle: rgba(255, 255, 255, 0.12);
+  --overlay-light-muted: rgba(255, 255, 255, 0.14);
+  --overlay-light-line: rgba(255, 255, 255, 0.18);
+  --glass-border-light: rgba(255, 255, 255, 0.62);
+  --glass-highlight: rgba(255, 255, 255, 0.82);
+  --shadow-ink-soft-color: rgba(15, 23, 42, 0.08);
+  --shadow-ink-hover-color: rgba(15, 23, 42, 0.1);
+  --shadow-dark-soft-color: rgba(0, 0, 0, 0.14);
 
   --font-sans:
     -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif;
@@ -39,6 +60,6 @@
   --radius-pill: 999px;
 
   --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.06);
-  --shadow-card: 0 24px 70px rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 24px 70px var(--shadow-ink-soft-color);
   --shadow-lift: 0 14px 34px rgba(27, 33, 36, 0.14);
 }

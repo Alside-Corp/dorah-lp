@@ -1,14 +1,27 @@
+.compliance-layout {
+  display: grid;
+  gap: var(--space-8);
+}
+
 .commitment-list {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
   margin: var(--space-6) 0 0;
   padding: 0;
 }
 
 .commitment-panel {
-  background: color-mix(in srgb, var(--gelo) 28%, transparent);
-  border: 1px solid color-mix(in srgb, var(--grafite) 8%, transparent);
+  backdrop-filter: blur(22px) saturate(115%);
+  -webkit-backdrop-filter: blur(22px) saturate(115%);
+  background:
+    radial-gradient(circle at 92% 4%, color-mix(in srgb, var(--ciano-vivo) 22%, transparent), transparent 26%),
+    linear-gradient(145deg, color-mix(in srgb, var(--gelo) 58%, transparent), color-mix(in srgb, var(--papel) 70%, transparent));
+  border: 1px solid color-mix(in srgb, var(--gelo-profundo) 20%, transparent);
   border-radius: var(--radius-xl);
-  padding: var(--space-8);
+  box-shadow: 0 22px 50px color-mix(in srgb, var(--gelo-profundo) 10%, transparent);
+  padding: var(--space-7);
 }
 
 .commitment-intro {
@@ -18,17 +31,30 @@
 }
 
 .commitment-item {
-  background: color-mix(in srgb, var(--papel) 70%, transparent);
-  border: 1px solid color-mix(in srgb, var(--grafite) 7%, transparent);
+  backdrop-filter: blur(14px) saturate(115%);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--papel) 82%, transparent), color-mix(in srgb, var(--gelo) 40%, transparent));
+  border: 1px solid color-mix(in srgb, var(--gelo-profundo) 16%, transparent);
   border-radius: var(--radius-md);
   display: grid;
-  gap: var(--space-4);
+  align-content: start;
+  gap: var(--space-3);
   grid-template-columns: auto 1fr;
   padding: var(--space-5);
 }
 
 .commitment-item + .commitment-item {
-  margin-top: var(--space-3);
+  margin-top: 0;
+}
+
+.commitment-item:nth-child(2) {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--areia) 58%, transparent), color-mix(in srgb, var(--papel) 78%, transparent));
+  border-color: color-mix(in srgb, var(--amarelo-apoio) 32%, transparent);
+}
+
+.commitment-item:nth-child(3) {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--ciano-vivo) 16%, transparent), color-mix(in srgb, var(--papel) 80%, transparent));
+  border-color: color-mix(in srgb, var(--ciano-vivo) 34%, transparent);
 }
 
 .commitment-icon {
@@ -42,6 +68,16 @@
   width: 2rem;
 }
 
+.commitment-item:nth-child(2) .commitment-icon {
+  background: color-mix(in srgb, var(--amarelo-apoio) 24%, transparent);
+  color: color-mix(in srgb, var(--amarelo-apoio) 78%, var(--grafite));
+}
+
+.commitment-item:nth-child(3) .commitment-icon {
+  background: color-mix(in srgb, var(--ciano-vivo) 23%, transparent);
+  color: var(--gelo-profundo);
+}
+
 .commitment-item strong {
   display: block;
   font-size: 1rem;
@@ -52,4 +88,10 @@
   font-size: .92rem;
   line-height: 1.55rem;
   margin-top: var(--space-1);
+}
+
+@media (max-width: 860px) {
+  .commitment-list {
+    grid-template-columns: 1fr;
+  }
 }

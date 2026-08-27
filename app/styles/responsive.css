@@ -5,9 +5,8 @@
 }
 
 @media (min-width: 640px) {
-  .stats-grid,
-  .dashboard-metrics {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .chat-card {
@@ -31,18 +30,22 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .split-grid-problem {
-    align-items: center;
-    column-gap: 6rem;
-    grid-template-columns: minmax(30rem, .95fr) minmax(0, 1.05fr);
+  .problem-layout {
+    align-items: start;
+    column-gap: 3rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(30rem, 0.95fr);
+  }
+
+  .problem-layout .stats-grid {
+    grid-column: 1 / -1;
   }
 
   .split-grid-dashboard {
-    grid-template-columns: .8fr 1.2fr;
+    grid-template-columns: 0.8fr 1.2fr;
   }
 
   .split-grid-psychologist {
-    grid-template-columns: 1fr .9fr;
+    grid-template-columns: 1fr 0.9fr;
   }
 
   .hero-glass-visual {
@@ -51,6 +54,27 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 29rem;
+    width: 30rem;
+  }
+
+  .hero-copy {
+    max-width: calc(100% - 31rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .weekly-summary-card,
+  .dashboard-card {
+    padding: var(--space-5);
+  }
+
+  .weekly-summary-head {
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .theme-bar-row {
+    gap: var(--space-2);
+    grid-template-columns: 7rem 1fr;
   }
 }

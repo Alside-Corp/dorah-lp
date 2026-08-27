@@ -50,12 +50,12 @@
 }
 
 .site-header-inner {
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--glass-border-light);
   border-radius: var(--radius-pill);
   background: linear-gradient(105deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.56));
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    0 14px 36px rgba(15, 23, 42, 0.08);
+    0 14px 36px var(--shadow-ink-soft-color);
   padding-inline: 1.5rem;
   backdrop-filter: blur(24px) saturate(135%);
   -webkit-backdrop-filter: blur(24px) saturate(135%);
@@ -63,40 +63,42 @@
 }
 
 .brand-mark {
-  transition: transform 0.24s ease;
+  align-items: center;
+  display: flex;
 }
 
-.brand-mark:hover {
-  transform: translateY(-1px);
+.site-nav {
+  align-items: center;
+  background: color-mix(in srgb, var(--papel) 46%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gelo-profundo) 14%, transparent);
+  border-radius: var(--radius-pill);
+  gap: 0.55rem;
+  padding: 0.25rem;
 }
 
 .site-nav a {
+  border-radius: var(--radius-pill);
+  color: var(--ardosia);
+  font-size: 0.8rem;
+  padding: 0.5rem 0.85rem;
   position: relative;
-  transition: color 0.24s ease;
+  transition:
+    background 0.24s ease,
+    color 0.24s ease;
 }
 
 .site-nav a::after {
-  background: var(--gelo-profundo);
-  border-radius: var(--radius-pill);
-  bottom: -0.45rem;
-  content: '';
-  height: 2px;
-  left: 0;
-  position: absolute;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.28s ease;
-  width: 100%;
+  content: none;
 }
 
 .site-nav a:hover {
+  background: color-mix(in srgb, var(--gelo-profundo) 13%, transparent);
   color: var(--gelo-profundo);
 }
 
-.site-nav a:hover::after,
-.site-nav a:focus-visible::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.site-nav a:focus-visible {
+  outline: 2px solid var(--gelo-profundo);
+  outline-offset: 2px;
 }
 
 @keyframes header-enter {
@@ -126,10 +128,10 @@
 
 .glass-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.3));
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--glass-border-light);
   border-radius: 24px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 1px 0 var(--glass-highlight),
     var(--shadow-card);
   backdrop-filter: blur(28px) saturate(140%);
   -webkit-backdrop-filter: blur(28px) saturate(140%);
@@ -151,7 +153,7 @@
 
 .glass-card--dark {
   background: linear-gradient(135deg, rgba(27, 33, 36, 0.72), rgba(27, 33, 36, 0.46));
-  border-color: rgba(255, 255, 255, 0.14);
+  border-color: var(--overlay-light-muted);
 }
 
 .surface-aurora {
@@ -180,7 +182,7 @@
 
 .interactive-card:hover {
   border-color: rgba(63, 123, 137, 0.42);
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 24px 60px var(--shadow-ink-hover-color);
   transform: translateY(-0.5rem) scale(1.015);
 }
 
@@ -197,6 +199,111 @@
 
 .brand-mark-rah {
   color: var(--gelo-profundo);
+}
+
+.impact-title {
+  max-width: 42rem;
+}
+.conversation-section {
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      color-mix(in srgb, var(--papel) 52%, transparent),
+      transparent 42%
+    ),
+    var(--areia);
+}
+.impact-section {
+  background:
+    radial-gradient(
+      circle at 12% 78%,
+      color-mix(in srgb, var(--areia) 44%, transparent),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      color-mix(in srgb, var(--gelo-profundo) 18%, transparent),
+      transparent 34%
+    ),
+    var(--gelo);
+}
+.impact-copy {
+  max-width: 46rem;
+}
+.impact-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 3rem;
+}
+.impact-card {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--papel) 72%, transparent),
+    color-mix(in srgb, var(--papel) 34%, transparent)
+  );
+  border-color: color-mix(in srgb, var(--papel) 68%, transparent);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    0 22px 50px rgba(27, 33, 36, 0.1);
+  backdrop-filter: blur(26px) saturate(130%);
+  -webkit-backdrop-filter: blur(26px) saturate(130%);
+  min-height: 19rem;
+  padding: 2.5rem 2rem;
+  transition:
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.32s ease;
+}
+.impact-card-2 {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--gelo) 64%, transparent),
+    color-mix(in srgb, var(--gelo-profundo) 30%, transparent)
+  );
+  border-color: color-mix(in srgb, var(--gelo-profundo) 34%, var(--papel));
+}
+.impact-card-3 {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--papel) 66%, transparent),
+    color-mix(in srgb, var(--areia) 62%, transparent)
+  );
+  border-color: color-mix(in srgb, var(--areia) 76%, var(--papel));
+}
+.impact-card:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-0.5rem);
+}
+.impact-value {
+  color: var(--gelo-profundo);
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 650;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  margin: 0;
+}
+.impact-rule {
+  background: color-mix(in srgb, var(--gelo-profundo) 65%, transparent);
+  display: block;
+  height: 2px;
+  margin: 1.6rem 0;
+  width: 2.5rem;
+}
+.impact-label {
+  color: var(--grafite);
+  font-size: 1.1rem;
+  margin: 0;
+}
+.impact-detail {
+  color: var(--ardosia);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+}
+@media (max-width: 640px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-dark .brand-mark-do {

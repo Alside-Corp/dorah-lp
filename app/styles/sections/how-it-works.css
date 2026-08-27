@@ -5,15 +5,44 @@
 }
 
 .step-card {
-  border: 1px solid color-mix(in srgb, var(--grafite) 10%, transparent);
+  backdrop-filter: blur(22px) saturate(130%);
+  -webkit-backdrop-filter: blur(22px) saturate(130%);
+  border: 1px solid color-mix(in srgb, var(--papel) 66%, transparent);
   border-radius: var(--radius-lg);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    0 18px 42px rgba(27, 33, 36, 0.08);
   height: 100%;
   padding: var(--space-8);
 }
 
+.step-card.bg-areia {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--areia) 76%, transparent),
+    color-mix(in srgb, var(--papel) 42%, transparent)
+  );
+}
+
+.step-card.bg-gelo {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--gelo) 74%, transparent),
+    color-mix(in srgb, var(--gelo-profundo) 16%, transparent)
+  );
+}
+
+.step-card.bg-papel {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--papel) 74%, transparent),
+    color-mix(in srgb, var(--gelo) 34%, transparent)
+  );
+}
+
 .step-number {
   color: var(--gelo-profundo);
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .step-rule {
