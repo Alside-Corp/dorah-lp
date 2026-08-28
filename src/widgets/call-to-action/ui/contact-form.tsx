@@ -1,9 +1,10 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
-import { useState, type FormEvent } from 'react';
+import { useState } from 'react';
 
 const formName = 'solicitar-contato';
+
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 function formatBrazilianPhone(value: string) {
@@ -22,37 +23,15 @@ export function ContactForm() {
   const [status, setStatus] = useState<SubmitStatus>('idle');
   const [phone, setPhone] = useState('');
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus('submitting');
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const body = new URLSearchParams();
-
-    formData.forEach((value, key) => {
-      body.append(key, String(value));
-    });
-
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
-      });
-
-      if (!response.ok) throw new Error('Falha ao enviar formulário');
-
-      form.reset();
-      setPhone('');
-      setStatus('success');
-    } catch {
-      setStatus('error');
-    }
-  }
-
   return (
-    <form className="contact-form" name={formName} method="POST" onSubmit={handleSubmit}>
+    <form
+      className="contact-form"
+      name={formName}
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={() => setStatus('submitting')}
+    >
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="subject" value="Novo contato pelo site da Dorah" />
 
