@@ -1,1 +1,0 @@
-export { Psychologist } from './psychologist';
