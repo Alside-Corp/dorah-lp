@@ -1,5 +1,8 @@
 .hero-glass-visual {
-  display: none;
+  display: block;
+  margin: var(--space-12) auto 0;
+  max-width: 30rem;
+  width: 100%;
 }
 
 .hero-care-card {
@@ -12,7 +15,9 @@
   );
   border-color: color-mix(in srgb, var(--papel) 22%, transparent);
   border-radius: 2rem;
-  box-shadow: var(--shadow-floating), inset 0 1px 0 var(--overlay-light-muted);
+  box-shadow:
+    var(--shadow-floating),
+    inset 0 1px 0 var(--overlay-light-muted);
   overflow: hidden;
   padding: var(--space-7);
   position: relative;

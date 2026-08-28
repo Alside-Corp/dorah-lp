@@ -5,7 +5,9 @@
     color-mix(in srgb, var(--gelo) 86%, var(--gelo-profundo))
   );
   border-color: color-mix(in srgb, var(--papel) 86%, var(--gelo));
-  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--shadow-panel-dark);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    var(--shadow-panel-dark);
   color: var(--grafite);
   padding: var(--space-8);
 }

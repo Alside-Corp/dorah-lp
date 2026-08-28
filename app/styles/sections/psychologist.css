@@ -31,7 +31,7 @@
 
 .timeline-label {
   color: var(--gelo);
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
 }
 
 .timeline-status {
@@ -39,7 +39,7 @@
   border: 1px solid color-mix(in srgb, var(--gelo) 10%, transparent);
   border-radius: var(--radius-pill);
   color: var(--gelo);
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   padding: 0.4rem 0.7rem;
   text-transform: uppercase;
 }
@@ -91,13 +91,13 @@
 
 .timeline-item-head span {
   color: color-mix(in srgb, var(--gelo) 55%, transparent);
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   text-transform: uppercase;
 }
 
 .timeline-copy {
   color: color-mix(in srgb, var(--gelo) 75%, transparent);
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   margin-top: var(--space-1);
 }
 .weekly-summary-card {
@@ -118,13 +118,13 @@
   justify-content: space-between;
 }
 .weekly-summary-title {
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   font-weight: 650;
   margin: 0 0 0.25rem;
 }
 .weekly-summary-subtitle {
   color: color-mix(in srgb, var(--gelo) 60%, transparent);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
 }
 .weekly-summary-stats {
   align-items: stretch;
@@ -153,19 +153,19 @@
 }
 .weekly-summary-stats b {
   color: var(--ciano-vivo);
-  font-size: 1.7rem;
+  font-size: var(--text-xl);
 }
 .weekly-summary-stats div:nth-child(3) b {
   color: var(--amarelo-apoio);
 }
 .weekly-summary-stats span {
   color: color-mix(in srgb, var(--gelo) 62%, transparent);
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
   line-height: 1.45;
 }
 .theme-bars-title {
   color: var(--gelo);
-  font-size: 0.78rem;
+  font-size: var(--text-sm);
   font-weight: 650;
   margin: 0 0 var(--space-4);
 }
@@ -181,7 +181,7 @@
 }
 .theme-bar-label {
   color: color-mix(in srgb, var(--gelo) 82%, transparent);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
 }
 .theme-bar-track {
   background: color-mix(in srgb, var(--gelo) 12%, transparent);
@@ -215,7 +215,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-size: 0.68rem;
+  font-size: var(--text-xs);
   gap: 0.55rem;
   line-height: 1.4;
   margin: var(--space-5) auto 0;
