@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
 const formName = 'solicitar-contato';
 
@@ -23,14 +23,44 @@ export function ContactForm() {
   const [status, setStatus] = useState<SubmitStatus>('idle');
   const [phone, setPhone] = useState('');
 
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus('submitting');
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const body = new URLSearchParams();
+
+    formData.forEach((value, key) => {
+      body.append(key, String(value));
+    });
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+
+      if (!response.ok) throw new Error('Falha ao enviar formulário');
+
+      form.reset();
+      setPhone('');
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
+  }
+
   return (
     <form
       className="contact-form"
       name={formName}
       method="POST"
+      action="/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={() => setStatus('submitting')}
+      onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="subject" value="Novo contato pelo site da Dorah" />
