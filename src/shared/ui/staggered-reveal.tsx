@@ -24,11 +24,11 @@ export function StaggeredReveal({
   useLayoutEffect(() => {
     const element = root.current;
     if (!element || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
     const context = gsap.context(() => {
       const fills = fillSelector ? element.querySelectorAll<HTMLElement>(fillSelector) : [];
-      gsap.set(fills, { scaleX: 0, transformOrigin: 'left center' });
-
+      if (fills.length) {
+        gsap.set(fills, { scaleX: 0, transformOrigin: 'left center' });
+      }
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: element,

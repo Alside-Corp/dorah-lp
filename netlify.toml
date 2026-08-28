@@ -2,5 +2,8 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  NETFLIFY_NEXT_VERIFY_FORMS = "0"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"

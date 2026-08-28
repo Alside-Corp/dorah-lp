@@ -44,6 +44,7 @@ export function ContactForm() {
       if (!response.ok) throw new Error('Falha ao enviar formulário');
 
       form.reset();
+      setPhone('');
       setStatus('success');
     } catch {
       setStatus('error');
