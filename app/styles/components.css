@@ -52,7 +52,11 @@
 .site-header-inner {
   border: 1px solid var(--glass-border-light);
   border-radius: var(--radius-pill);
-  background: linear-gradient(105deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.56));
+  background: linear-gradient(
+    105deg,
+    var(--surface-glass-light-strong),
+    var(--surface-glass-light)
+  );
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.95),
     0 14px 36px var(--shadow-ink-soft-color);

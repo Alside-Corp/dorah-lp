@@ -28,13 +28,13 @@
     );
   border: 1px solid color-mix(in srgb, var(--gelo-profundo) 20%, transparent);
   border-radius: var(--radius-xl);
-  box-shadow: 0 22px 50px color-mix(in srgb, var(--gelo-profundo) 10%, transparent);
+  box-shadow: var(--shadow-panel);
   padding: var(--space-7);
 }
 
 .commitment-intro {
   color: var(--ardosia);
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   line-height: 2rem;
 }
 
@@ -100,12 +100,12 @@
 
 .commitment-item strong {
   display: block;
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .commitment-item p {
   color: var(--ardosia);
-  font-size: 0.92rem;
+  font-size: var(--text-sm);
   line-height: 1.55rem;
   margin-top: var(--space-1);
 }
