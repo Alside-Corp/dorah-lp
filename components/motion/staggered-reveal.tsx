@@ -26,9 +26,7 @@ export function StaggeredReveal({
     if (!element || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const context = gsap.context(() => {
-      const fills = fillSelector
-        ? element.querySelectorAll<HTMLElement>(fillSelector)
-        : [];
+      const fills = fillSelector ? element.querySelectorAll<HTMLElement>(fillSelector) : [];
       gsap.set(fills, { scaleX: 0, transformOrigin: 'left center' });
 
       const timeline = gsap.timeline({

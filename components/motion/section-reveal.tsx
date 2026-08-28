@@ -43,7 +43,6 @@ export function SectionReveal({
           },
         },
       );
-
     }, target);
 
     return () => context.revert();
