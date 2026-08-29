@@ -5,17 +5,17 @@ import { MobileMenu } from './mobile-menu';
 
 export function Header() {
   return (
-    <header className="site-header absolute inset-x-0 top-0 z-10">
-      <div className="site-header-inner container flex h-22 items-center justify-between">
+    <header className="site-header">
+      <div className="site-header-inner container">
         <div className="brand-mark">
           <Image src={darkLogo} alt="Dorah" width={102} height={32} priority />
         </div>
-        <nav className="site-nav hidden md:flex" aria-label="Navegação principal">
+        <nav className="site-nav" aria-label="Navegação principal">
           <a href="#como-funciona">Como funciona</a>
           <a href="#privacidade">Privacidade</a>
           <a href="#rh">Para empresas</a>
         </nav>
-        <a className="button button-primary header-button hidden md:inline-flex" href="#contato">
+        <a className="button button-primary header-button" href="#contato">
           Entre em contato <ArrowUpRight size={15} />
         </a>
         <MobileMenu />

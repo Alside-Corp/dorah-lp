@@ -1,9 +1,10 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
 const formName = 'solicitar-contato';
+type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 function formatBrazilianPhone(value: string) {
   const digits = value.replace(/\D/g, '').slice(0, 11);
@@ -19,16 +20,44 @@ function formatBrazilianPhone(value: string) {
 
 export function ContactForm() {
   const [phone, setPhone] = useState('');
-  const submitted = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('success') === '1';
+  const [status, setStatus] = useState<SubmitStatus>('idle');
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus('submitting');
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const body = new URLSearchParams();
+
+    formData.forEach((value, key) => {
+      body.append(key, String(value));
+    });
+
+    try {
+      const response = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+
+      if (!response.ok) throw new Error('Falha ao registrar a submissão');
+
+      form.reset();
+      setPhone('');
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
+  }
 
   return (
     <form
       className="contact-form"
       name={formName}
       method="POST"
-      action="/?success=1#contato"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      action="/__forms.html"
+      onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="subject" value="Novo contato pelo site da Dorah" />
@@ -95,16 +124,21 @@ export function ContactForm() {
         </label>
       </div>
 
-      <button className="contact-submit" type="submit">
-        Solicitar contato com especialista
+      <button className="contact-submit" type="submit" disabled={status === 'submitting'}>
+        {status === 'submitting' ? 'Enviando...' : 'Solicitar contato com especialista'}
         <ArrowUpRight aria-hidden="true" size={17} />
       </button>
 
-      {submitted && (
-        <div className="contact-feedback" aria-live="polite">
+      <div className="contact-feedback" aria-live="polite">
+        {status === 'success' && (
           <p className="contact-success">Solicitação enviada. Em breve entraremos em contato.</p>
-        </div>
-      )}
+        )}
+        {status === 'error' && (
+          <p className="contact-error">
+            Não foi possível enviar agora. Tente novamente em instantes.
+          </p>
+        )}
+      </div>
     </form>
   );
 }
