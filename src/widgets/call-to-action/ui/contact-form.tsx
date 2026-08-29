@@ -40,8 +40,10 @@ export function ContactForm() {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body.toString(),
       });
-
-      if (!response.ok) throw new Error('Falha ao registrar a submissão');
+      
+      if (!response.ok) {
+        throw new Error('Falha ao registrar a submissão');
+      }
 
       form.reset();
       setPhone('');
