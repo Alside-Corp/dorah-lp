@@ -81,6 +81,8 @@
 
 .site-nav {
   align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
   background: color-mix(in srgb, var(--papel) 46%, transparent);
   border: 1px solid color-mix(in srgb, var(--gelo-profundo) 14%, transparent);
   border-radius: var(--radius-pill);
