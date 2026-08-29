@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { SmoothScrollProvider } from '@/app/providers/smooth-scroll-provider';
-import './globals.css';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/typography.css';
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="pt-BR" className="antialiased">
+    <html lang="pt-BR">
       <body>
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

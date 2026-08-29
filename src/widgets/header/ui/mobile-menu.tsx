@@ -13,7 +13,7 @@ export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="mobile-menu md:hidden">
+    <div className="mobile-menu">
       <button
         type="button"
         className="mobile-menu-trigger"

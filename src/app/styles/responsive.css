@@ -156,6 +156,10 @@
 }
 
 @media (max-width: 767px) {
+  .mobile-menu {
+    display: block;
+  }
+
   .site-header-inner {
     padding-inline: 1rem;
   }

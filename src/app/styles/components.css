@@ -46,11 +46,19 @@
 
 .site-header {
   animation: header-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  inset-inline: 0;
   padding-top: 0.75rem;
+  position: absolute;
+  top: 0;
+  z-index: 10;
 }
 
 .site-header-inner {
+  align-items: center;
   border: 1px solid var(--glass-border-light);
+  display: flex;
+  height: 5.5rem;
+  justify-content: space-between;
   border-radius: var(--radius-pill);
   background: linear-gradient(
     105deg,
@@ -92,6 +100,7 @@
 }
 
 .mobile-menu {
+  display: none;
   position: relative;
 }
 

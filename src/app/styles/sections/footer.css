@@ -1,4 +1,10 @@
+.site-footer {
+  color: var(--gelo);
+  padding-block: var(--space-8);
+}
+
 .footer-shell {
+  font-size: var(--text-sm);
   align-items: flex-start;
   display: flex;
   flex-direction: column;
