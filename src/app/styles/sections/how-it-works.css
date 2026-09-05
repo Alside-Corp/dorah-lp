@@ -42,13 +42,18 @@
 
 .step-number {
   color: var(--gelo-profundo);
-  font-size: var(--text-sm);
+  font-size: clamp(2.75rem, 4vw, 3.5rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  margin: 0;
 }
 
 .step-rule {
   background: color-mix(in srgb, var(--gelo-profundo) 45%, transparent);
   height: 1px;
-  margin-top: var(--space-12);
+  margin-top: var(--space-6);
   width: 3rem;
 }
 

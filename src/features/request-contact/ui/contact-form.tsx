@@ -1,9 +1,10 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
+import { contactFormName, submitContact } from '../api/submit-contact';
+import { contactSchema } from '../model/contact-schema';
 
-const formName = 'solicitar-contato';
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 function formatBrazilianPhone(value: string) {
@@ -21,47 +22,51 @@ function formatBrazilianPhone(value: string) {
 export function ContactForm() {
   const [phone, setPhone] = useState('');
   const [status, setStatus] = useState<SubmitStatus>('idle');
+  const [validationError, setValidationError] = useState('');
+  const submitting = useRef(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus('submitting');
+    if (submitting.current) return;
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const body = new URLSearchParams();
-
-    formData.forEach((value, key) => {
-      body.append(key, String(value));
-    });
+    const result = contactSchema.safeParse(Object.fromEntries(formData));
+    setValidationError('');
+    if (!result.success) {
+      setStatus('idle');
+      setValidationError(result.error.issues[0].message);
+      const field = form.elements.namedItem(String(result.error.issues[0].path[0]));
+      if (field instanceof HTMLInputElement) field.focus();
+      return;
+    }
+    submitting.current = true;
+    setStatus('submitting');
 
     try {
-      const response = await fetch('/__forms.html', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
-      });
-
-      if (!response.ok) {
-        throw new Error('Falha ao registrar a submissão');
-      }
+      await submitContact(result.data, String(formData.get('bot-field') ?? ''));
 
       form.reset();
       setPhone('');
       setStatus('success');
     } catch {
       setStatus('error');
+    } finally {
+      submitting.current = false;
     }
   }
 
   return (
     <form
       className="contact-form"
-      name={formName}
+      name={contactFormName}
       method="POST"
       action="/__forms.html"
       onSubmit={handleSubmit}
+      aria-busy={status === 'submitting'}
+      aria-describedby="contact-feedback"
     >
-      <input type="hidden" name="form-name" value={formName} />
+      <input type="hidden" name="form-name" value={contactFormName} />
       <input type="hidden" name="subject" value="Novo contato pelo site da Dorah" />
 
       <p className="contact-honeypot" aria-hidden="true">
@@ -79,6 +84,7 @@ export function ContactForm() {
             type="text"
             name="name"
             autoComplete="name"
+            maxLength={120}
             placeholder="Seu nome completo"
             required
           />
@@ -91,6 +97,7 @@ export function ContactForm() {
             type="email"
             name="email"
             autoComplete="email"
+            maxLength={254}
             inputMode="email"
             placeholder="voce@empresa.com.br"
             required
@@ -120,6 +127,7 @@ export function ContactForm() {
             type="text"
             name="company"
             autoComplete="organization"
+            maxLength={160}
             placeholder="Nome da sua empresa"
             required
           />
@@ -131,12 +139,18 @@ export function ContactForm() {
         <ArrowUpRight aria-hidden="true" size={17} />
       </button>
 
-      <div className="contact-feedback" aria-live="polite">
+      <div
+        id="contact-feedback"
+        className="min-h-5 text-center text-sm"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {validationError && <p className="text-brand-error">{validationError}</p>}
         {status === 'success' && (
-          <p className="contact-success">Solicitação enviada. Em breve entraremos em contato.</p>
+          <p className="text-brand-success">Solicitação enviada. Em breve entraremos em contato.</p>
         )}
         {status === 'error' && (
-          <p className="contact-error">
+          <p className="text-brand-error">
             Não foi possível enviar agora. Tente novamente em instantes.
           </p>
         )}

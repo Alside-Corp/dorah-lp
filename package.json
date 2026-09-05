@@ -1,7 +1,7 @@
 {
   "name": "dorah-lp",
   "version": "0.1.0",
-  "private": true,
+  "privatqe": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,16 +18,20 @@
     "lucide-react": "^1.31.0",
     "next": "16.3.1",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^5.15.13",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
+    "postcss": "^8.5.28",
     "prettier": "^3.9.6",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5"
   }
 }

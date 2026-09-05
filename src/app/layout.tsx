@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SmoothScrollProvider } from '@/app/providers/smooth-scroll-provider';
+import './styles/tailwind.css';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/typography.css';

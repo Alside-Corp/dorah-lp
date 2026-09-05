@@ -1,0 +1,9 @@
+/* Keep the existing reset and visual styles during incremental adoption. */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities) source('../../');
+
+@theme inline {
+  --color-brand-error: var(--coral-apoio);
+  --color-brand-success: var(--ciano-vivo);
+}

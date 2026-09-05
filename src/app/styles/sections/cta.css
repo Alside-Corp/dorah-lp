@@ -166,20 +166,6 @@
   opacity: 0.65;
 }
 
-.contact-feedback {
-  font-size: var(--text-sm);
-  min-height: var(--space-5);
-  text-align: center;
-}
-
-.contact-success {
-  color: var(--ciano-vivo);
-}
-
-.contact-error {
-  color: var(--coral-apoio);
-}
-
 .contact-honeypot {
   border: 0;
   clip: rect(0, 0, 0, 0);
