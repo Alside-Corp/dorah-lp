@@ -1,7 +1,7 @@
 {
   "name": "dorah-lp",
   "version": "0.1.0",
-  "privatqe": true,
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
