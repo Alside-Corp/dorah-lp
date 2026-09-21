@@ -1,5 +1,5 @@
 import { SectionReveal } from '@/shared/ui/section-reveal';
-import { conversationContent } from '@/shared/config/landing-content';
+import { conversationContent } from '../model/content';
 
 export function Conversation() {
   return (
