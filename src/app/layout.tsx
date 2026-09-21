@@ -13,6 +13,7 @@ import './styles/sections/psychologist.css';
 import './styles/sections/compliance.css';
 import './styles/sections/dashboard.css';
 import './styles/sections/cta.css';
+import './styles/sections/faq.css';
 import './styles/sections/footer.css';
 import './styles/responsive.css';
 

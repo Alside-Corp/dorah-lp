@@ -10,20 +10,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
-    const lenis = createLenis();
-    lenis.on('scroll', ScrollTrigger.update);
-    let frame = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
+    const media = gsap.matchMedia();
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      const lenis = createLenis();
+      lenis.on('scroll', ScrollTrigger.update);
+      let frame = 0;
+      const raf = (time: number) => {
+        lenis.raf(time);
+        frame = requestAnimationFrame(raf);
+      };
       frame = requestAnimationFrame(raf);
-    };
-    frame = requestAnimationFrame(raf);
-    ScrollTrigger.refresh();
+      ScrollTrigger.refresh();
 
-    return () => {
-      cancelAnimationFrame(frame);
-      lenis.destroy();
-    };
+      return () => {
+        cancelAnimationFrame(frame);
+        lenis.destroy();
+      };
+    });
+    return () => media.revert();
   }, []);
   return children;
 }
