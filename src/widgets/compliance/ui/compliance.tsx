@@ -1,7 +1,7 @@
 import { Check } from 'lucide-react';
 import { SectionReveal } from '@/shared/ui/section-reveal';
 import { StaggeredReveal } from '@/shared/ui/staggered-reveal';
-import { complianceContent } from '@/shared/config/landing-content';
+import { complianceContent } from '../model/content';
 
 export function Compliance() {
   return (

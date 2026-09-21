@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ShieldCheck } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';
 import { GlassCard } from '@/shared/ui/glass-card';
-import { heroContent } from '@/shared/config/landing-content';
+import { heroContent } from '../model/content';
 
 export function HeroGlassVisual() {
   const element = useRef<HTMLDivElement>(null);
@@ -12,15 +12,20 @@ export function HeroGlassVisual() {
 
   useLayoutEffect(() => {
     const target = element.current;
-    if (!target || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const context = gsap.context(() => {
-      gsap.fromTo(
-        target,
-        { autoAlpha: 0, x: 40, scale: 0.94 },
-        { autoAlpha: 1, x: 0, scale: 1, duration: 1.1, delay: 0.35, ease: 'power3.out' },
-      );
-    }, target);
-    return () => context.revert();
+    if (!target) return;
+    const media = gsap.matchMedia();
+    media.add(
+      '(prefers-reduced-motion: no-preference)',
+      () => {
+        gsap.fromTo(
+          target,
+          { autoAlpha: 0, x: 40, scale: 0.94 },
+          { autoAlpha: 1, x: 0, scale: 1, duration: 1.1, delay: 0.35, ease: 'power3.out' },
+        );
+      },
+      target,
+    );
+    return () => media.revert();
   }, []);
 
   return (

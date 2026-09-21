@@ -1,6 +1,6 @@
 import { SectionReveal } from '@/shared/ui/section-reveal';
 import { InteractiveCard } from '@/shared/ui/interactive-card';
-import { howItWorksContent } from '@/shared/config/landing-content';
+import { howItWorksContent } from '../model/content';
 
 export function HowItWorks() {
   return (

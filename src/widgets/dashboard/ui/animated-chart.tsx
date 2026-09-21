@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { dashboardContent } from '@/shared/config/landing-content';
+import { dashboardContent } from '../model/content';
 
 export function AnimatedChart() {
   return (

@@ -14,6 +14,7 @@ export function Header() {
           <a href="#como-funciona">Como funciona</a>
           <a href="#privacidade">Privacidade</a>
           <a href="#rh">Para empresas</a>
+          <a href="#perguntas-frequentes">Perguntas frequentes</a>
         </nav>
         <a className="button button-primary header-button" href="#contato">
           Entre em contato <ArrowUpRight size={15} />

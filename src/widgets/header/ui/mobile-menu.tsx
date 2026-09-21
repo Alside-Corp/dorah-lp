@@ -7,6 +7,7 @@ const links = [
   ['Como funciona', '#como-funciona'],
   ['Privacidade', '#privacidade'],
   ['Para empresas', '#rh'],
+  ['Perguntas frequentes', '#perguntas-frequentes'],
 ] as const;
 
 export function MobileMenu() {

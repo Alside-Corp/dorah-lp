@@ -1,5 +1,5 @@
 import { SectionReveal } from '@/shared/ui/section-reveal';
-import { dashboardContent } from '@/shared/config/landing-content';
+import { dashboardContent } from '../model/content';
 import { AnimatedChart } from './animated-chart';
 
 const metrics = [

@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { SectionReveal } from '@/shared/ui/section-reveal';
-import { heroContent } from '@/shared/config/landing-content';
+import { heroContent } from '../model/content';
 import { HeroGlassVisual } from './hero-glass-visual';
 
 export function Hero() {

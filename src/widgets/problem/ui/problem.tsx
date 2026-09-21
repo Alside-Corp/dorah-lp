@@ -1,5 +1,5 @@
 import { SectionReveal } from '@/shared/ui/section-reveal';
-import { problemContent } from '@/shared/config/landing-content';
+import { problemContent } from '../model/content';
 import { ProblemSignal } from './problem-signal';
 
 const problemStats = [

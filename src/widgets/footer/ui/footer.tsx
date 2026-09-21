@@ -1,4 +1,4 @@
-import { footerContent } from '@/shared/config/landing-content';
+import { footerContent } from '../model/content';
 import Image from 'next/image';
 import lightLogo from '@/shared/assets/brand/lockup-nevoa-48-transparente.png';
 
