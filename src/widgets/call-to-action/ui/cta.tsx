@@ -1,5 +1,5 @@
 import { SectionReveal } from '@/shared/ui/section-reveal';
-import { ctaContent } from '@/shared/config/landing-content';
+import { ctaContent } from '../model/content';
 import { ContactForm } from '@/features/request-contact';
 
 export function CallToAction() {
