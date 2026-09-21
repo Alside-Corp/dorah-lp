@@ -3,6 +3,7 @@ import { Compliance } from '@/widgets/compliance';
 import { Conversation } from '@/widgets/conversation';
 import { Dashboard } from '@/widgets/dashboard';
 import { Footer } from '@/widgets/footer';
+import { Faq } from '@/widgets/faq';
 import { Header } from '@/widgets/header';
 import { Hero } from '@/widgets/hero';
 import { HowItWorks } from '@/widgets/how-it-works';
@@ -23,6 +24,7 @@ export function LandingPage() {
         <Psychologist />
         <Compliance />
         <Dashboard />
+        <Faq />
         <CallToAction />
       </main>
       <Footer />
