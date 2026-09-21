@@ -1,6 +1,6 @@
 import { SectionReveal } from '@/shared/ui/section-reveal';
 import { StaggeredReveal } from '@/shared/ui/staggered-reveal';
-import { psychologistContent } from '@/shared/config/landing-content';
+import { psychologistContent } from '../model/content';
 
 const themes = [
   ['Sobrecarga no trabalho', '84%'],
