@@ -3,10 +3,6 @@
     width: min(100% - 2rem, 72rem);
   }
 
-  .section-pad {
-    padding-block: 5rem;
-  }
-
   .hero-section {
     padding-top: 7.5rem;
   }
@@ -155,7 +151,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .mobile-menu {
     display: block;
   }

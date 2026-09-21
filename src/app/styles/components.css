@@ -392,7 +392,13 @@
     transition: none;
   }
 
-  .interactive-card {
+  .interactive-card,
+  .interactive-card:hover,
+  .impact-card,
+  .impact-card:hover,
+  .button,
+  .button:hover,
+  .button:active {
     transition: none;
     transform: none;
   }

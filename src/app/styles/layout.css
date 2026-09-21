@@ -4,7 +4,7 @@
 }
 
 .section-pad {
-  padding-block: var(--space-28);
+  padding-block: clamp(3rem, 5.625vw, 4.5rem);
 }
 
 .section-papel {
