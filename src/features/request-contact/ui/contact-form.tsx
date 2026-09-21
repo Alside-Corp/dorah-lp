@@ -5,6 +5,9 @@ import { useRef, useState, type FormEvent } from 'react';
 import { contactFormName, submitContact } from '../api/submit-contact';
 import { contactSchema } from '../model/contact-schema';
 
+const inputClassName =
+  'w-full rounded-brand-md border border-solid border-white/24 bg-white/92 px-4 py-3.5 text-brand-base leading-[normal] text-brand-grafite outline-none placeholder:text-brand-ardosia/55 hover:border-brand-gelo-profundo/35 focus:border-brand-gelo-profundo focus:shadow-brand-focus transition-[border-color,box-shadow] duration-200 ease-[ease] motion-reduce:transition-none';
+
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 function formatBrazilianPhone(value: string) {
@@ -76,11 +79,11 @@ export function ContactForm() {
         </label>
       </p>
 
-      <div className="contact-fields">
-        <label className="contact-field">
+      <div className="grid gap-x-6 gap-y-5 min-[640px]:grid-cols-2">
+        <label className="grid gap-2 text-brand-sm font-semibold text-brand-gelo">
           Nome
           <input
-            className="contact-input"
+            className={inputClassName}
             type="text"
             name="name"
             autoComplete="name"
@@ -90,10 +93,10 @@ export function ContactForm() {
           />
         </label>
 
-        <label className="contact-field">
+        <label className="grid gap-2 text-brand-sm font-semibold text-brand-gelo">
           E-mail
           <input
-            className="contact-input"
+            className={inputClassName}
             type="email"
             name="email"
             autoComplete="email"
@@ -104,10 +107,10 @@ export function ContactForm() {
           />
         </label>
 
-        <label className="contact-field">
+        <label className="grid gap-2 text-brand-sm font-semibold text-brand-gelo">
           Telefone
           <input
-            className="contact-input"
+            className={inputClassName}
             type="tel"
             name="phone"
             autoComplete="tel"
@@ -120,10 +123,10 @@ export function ContactForm() {
           />
         </label>
 
-        <label className="contact-field">
+        <label className="grid gap-2 text-brand-sm font-semibold text-brand-gelo">
           Nome da empresa
           <input
-            className="contact-input"
+            className={inputClassName}
             type="text"
             name="company"
             autoComplete="organization"
@@ -134,7 +137,11 @@ export function ContactForm() {
         </label>
       </div>
 
-      <button className="contact-submit" type="submit" disabled={status === 'submitting'}>
+      <button
+        className="mt-2 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-brand-pill border-0 bg-brand-papel px-6 py-4 text-brand-sm font-semibold text-brand-grafite transition-[background-color,box-shadow,transform] duration-200 ease-[ease] enabled:hover:bg-brand-ciano-vivo enabled:hover:shadow-brand-lift motion-safe:enabled:hover:-translate-y-0.5 enabled:active:translate-y-0 focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-brand-gelo-profundo focus-visible:outline-offset-3 disabled:cursor-wait disabled:opacity-65 motion-reduce:transition-none"
+        type="submit"
+        disabled={status === 'submitting'}
+      >
         {status === 'submitting' ? 'Enviando...' : 'Solicitar contato com especialista'}
         <ArrowUpRight aria-hidden="true" size={17} />
       </button>
