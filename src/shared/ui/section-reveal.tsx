@@ -18,34 +18,32 @@ export function SectionReveal({
     const target = element.current;
     if (!target) return;
 
-    const context = gsap.context(() => {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      if (reduceMotion) {
-        gsap.set(target, { clearProps: 'all' });
-        return;
-      }
-
-      gsap.fromTo(
-        target,
-        { autoAlpha: 0.15, y: 56, scale: 0.985 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          ease: 'none',
-          immediateRender: false,
-          scrollTrigger: {
-            trigger: target,
-            start: 'top 92%',
-            end: 'top 58%',
-            scrub: 0.85,
+    const media = gsap.matchMedia();
+    media.add(
+      '(prefers-reduced-motion: no-preference)',
+      () => {
+        gsap.fromTo(
+          target,
+          { autoAlpha: 0.15, y: 56, scale: 0.985 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            ease: 'none',
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: target,
+              start: 'top 92%',
+              end: 'top 58%',
+              scrub: 0.85,
+            },
           },
-        },
-      );
-    }, target);
+        );
+      },
+      target,
+    );
 
-    return () => context.revert();
+    return () => media.revert();
   }, []);
 
   return (
